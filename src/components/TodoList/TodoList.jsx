@@ -2,16 +2,16 @@ import { useSelector } from 'react-redux';
 import Text from '../Text/Text';
 import Grid from '../Grid/Grid';
 import Todo from '../Todo/Todo';
-import { selectTodoItems } from '../../redux/selectors';
+import { selectFilteredItems } from '../../redux/selectors';
 
 const TodoList = () => {
-  const todos = useSelector(selectTodoItems);
+  const filteredTodos = useSelector(selectFilteredItems);
 
   return (
     <>
-      {todos ? (
+      {filteredTodos && filteredTodos.length > 0 ? (
         <Grid>
-          {todos.map((item, index) => (
+          {filteredTodos.map((item, index) => (
             <Todo
               key={item.id}
               id={item.id}

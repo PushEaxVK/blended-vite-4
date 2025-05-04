@@ -4,7 +4,6 @@ import Filter from './components/Filter/Filter';
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
 import Section from './components/Section/Section';
-import Text from './components/Text/Text';
 import TodoList from './components/TodoList/TodoList';
 import EditForm from './components/EditForm/EditForm';
 import { selectCurrentTodo } from './redux/selectors';
@@ -17,7 +16,6 @@ export const App = () => {
       <Header />
       <Section>
         <Container>
-          {/* <Text textAlign="center">Create your first todo😉</Text> */}
           {currentTodo ? <EditForm /> : <Form />}
           <Filter />
           <TodoList />

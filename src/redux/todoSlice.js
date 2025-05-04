@@ -17,28 +17,16 @@ const slice = createSlice({
       state.items.push(action.payload);
     },
     deleteTodo: (state, action) => {
-      return {
-        ...state,
-        items: state.items.filter(item => item.id !== action.payload),
-      };
+      state.items = state.items.filter(item => item.id !== action.payload);
     },
     setCurretTodo: (state, action) => {
-      if (action.payload) {
-        state.currentTodo = state.items.find(
-          value => value.id === action.payload,
-        );
-      } else {
-        state.currentTodo = null;
-      }
+      state.currentTodo = action.payload;
     },
     saveEdit: (state, action) => {
-      return {
-        ...state,
-        items: state.items.map(item =>
-          item.id !== action.payload.id ? item : action.payload,
-        ),
-        currentTodo: null,
-      };
+      state.items = state.items.map(item =>
+        item.id !== action.payload.id ? item : action.payload,
+      );
+      state.currentTodo = null;
     },
   },
 });

@@ -11,7 +11,6 @@ const Form = () => {
   const handleTodo = event => {
     event.preventDefault();
     const form = event.target;
-    console.log(form);
     const text = form.elements.search.value.trim();
     if (text) {
       dispatch(addTodo({ text, id: nanoid() }));

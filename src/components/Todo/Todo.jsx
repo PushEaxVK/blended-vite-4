@@ -13,7 +13,7 @@ const Todo = ({ id, counter, text }) => {
   };
 
   const handleEdit = () => {
-    dispatch(setCurretTodo(id));
+    dispatch(setCurretTodo({ text, id }));
   };
 
   return (
